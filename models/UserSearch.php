@@ -93,7 +93,8 @@ class UserSearch extends Model
             return $dataProvider;
         }
 
-        $table_name = $query->modelClass::tableName();
+        $table_name_class = $query->modelClass;
+        $table_name = $table_name_class::tableName();
 
         if ($this->created_at !== null) {
             $date = strtotime($this->created_at);
